@@ -1,3 +1,7 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "google", "prettier"],
+  "rules": {
+    "require-jsdoc": "off",
+    "react/react-in-jsx-scope": "off"
+  }
 }
