@@ -1,4 +1,7 @@
-import { LinkedListInterface, NodeInterface } from '@service/sub-services/LinkedList/LinkedListInterface'
+import {
+  LinkedListInterface,
+  NodeInterface,
+} from '@service/sub-services/LinkedList/LinkedListInterface'
 
 export default class LinkedList implements LinkedListInterface {
   head: null | NodeInterface
