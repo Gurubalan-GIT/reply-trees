@@ -1,4 +1,32 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
 
-npm test
+echo '🏗️👷 Styling, testing and building your project before committing'
+
+npm run check-format ||
+(
+    echo '❌ Prettier Check Failed. Run npm run format, add changes and try commit again.';
+    false;
+)
+
+npm run check-lint ||
+(
+        echo '❌ ESLint Check Failed. Make the required changes listed above, add changes and try to commit again.'
+        false; 
+)
+
+npm run check-types ||
+(
+    echo '❌ Are you seriously trying to write that? Make the changes required above.'
+    false;
+)
+
+echo 'Trying to build now.'
+
+npm run build ||
+(
+    echo '❌ Next build failed: View the errors above to see why.'
+    false;
+)
+
+echo '✅ All checks passed, commiting changes.'

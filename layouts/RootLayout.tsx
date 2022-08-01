@@ -1,11 +1,19 @@
-import Head from "next/head";
-import React, { FunctionComponent, ReactNode } from "react";
+import { Dispatch } from '@rematch/store'
+import Head from 'next/head'
+import { FunctionComponent, ReactNode, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
 type RootLayoutProps = {
-  children?: ReactNode;
-};
+  children?: ReactNode
+}
 
 const RootLayout: FunctionComponent<RootLayoutProps> = ({ children }) => {
+  const dispatch = useDispatch<Dispatch>()
+
+  useEffect(() => {
+    dispatch.comments.loadComments()
+  }, [dispatch.comments])
+
   return (
     <div>
       <Head>
@@ -15,7 +23,7 @@ const RootLayout: FunctionComponent<RootLayoutProps> = ({ children }) => {
       </Head>
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default RootLayout;
+export default RootLayout
