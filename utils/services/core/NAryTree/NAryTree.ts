@@ -1,4 +1,4 @@
-import { NAryTreeInterface } from '@service/sub-services/NAryTree/NAryTreeInterface'
+import { NAryTreeInterface } from '@services/core/NAryTree/NAryTreeInterface'
 import Queue from '../Queue/Queue'
 
 export class NAryTree implements NAryTreeInterface {

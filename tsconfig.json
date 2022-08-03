@@ -30,7 +30,7 @@
       "@localization": ["utils/localization"],
       "@constants": ["utils/constants"],
       "@rematch/*": ["utils/rematch/*"],
-      "@service/*": ["utils/services/*"]
+      "@services/*": ["utils/services/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

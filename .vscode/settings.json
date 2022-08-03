@@ -6,5 +6,5 @@
     "source.fixAll.eslint": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "cSpell.words": []
+  "cSpell.words": ["uuidv"]
 }

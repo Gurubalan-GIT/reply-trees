@@ -1,4 +1,4 @@
-import { QueueInterface } from '@service/sub-services/Queue/QueueInterface'
+import { QueueInterface } from '@services/core/Queue/QueueInterface'
 import LinkedList from '../LinkedList/LinkedList'
 
 export default class Queue extends LinkedList implements QueueInterface {

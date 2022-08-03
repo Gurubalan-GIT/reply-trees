@@ -1,0 +1,20 @@
+@import '@styles/design-system.scss';
+
+.nestedComments {
+  margin-left: 5%;
+}
+
+.commentContainer {
+  padding: 20px;
+  background-color: black;
+  color: white;
+  margin: 10px 0 10px 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.expandButton {
+  cursor: pointer;
+}
