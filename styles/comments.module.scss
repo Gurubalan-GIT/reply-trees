@@ -17,4 +17,8 @@
 
 .expandButton {
   cursor: pointer;
+  font-size: 14px;
+  &:hover {
+    text-decoration: underline;
+  }
 }

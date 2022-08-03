@@ -1,15 +1,14 @@
 import { GET_COMMENTS } from '@localization'
 import { createModel } from '@rematch/core'
 import { Comments } from '@services/Comments/Comments'
-import Queue from '@services/core/Queue/Queue'
 import { convertDataToTrees } from 'utils/helpers'
 import { CommentType } from 'utils/types'
 import type { RootModel } from '.'
 
 export const comments = createModel<RootModel>()({
-  state: new Queue() as Comments,
+  state: new Comments() as Comments,
   reducers: {
-    setComments: (state, payload: Comments) => payload,
+    setComments: (_state: Comments, payload: Comments) => payload,
   },
   effects: {
     async loadComments(): Promise<any> {

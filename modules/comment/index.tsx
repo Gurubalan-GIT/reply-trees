@@ -16,23 +16,25 @@ const Comment: FunctionComponent<CommentProps> = ({
   return (
     <div className={classes.commentContainer}>
       {comment.body}
-      <div
-        className={classes.expandButton}
-        onClick={() =>
-          setViewNestedComments({
-            activeKey: comment.key,
-            isExpanded:
-              viewNestedComments.activeKey !== comment.key
-                ? true
-                : !viewNestedComments.isExpanded,
-          })
-        }
-      >
-        {!viewNestedComments.isExpanded ||
-        viewNestedComments.activeKey !== comment.key
-          ? '▼'
-          : '▲'}
-      </div>
+      {!!comment?.children?.length && (
+        <div
+          className={classes.expandButton}
+          onClick={() =>
+            setViewNestedComments({
+              activeKey: comment.key,
+              isExpanded:
+                viewNestedComments.activeKey !== comment.key
+                  ? true
+                  : !viewNestedComments.isExpanded,
+            })
+          }
+        >
+          {!viewNestedComments.isExpanded ||
+          viewNestedComments.activeKey !== comment.key
+            ? 'View Replies'
+            : 'Hide Replies'}
+        </div>
+      )}
     </div>
   )
 }

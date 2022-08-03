@@ -14,7 +14,7 @@ const Home: NextPage = () => {
   return (
     <RootLayout className={classes.rootContainer}>
       <div className={classes.commentsContainer}>
-        {!!commentsQueue.length && <Comments commentsQueue={commentsQueue} />}
+        {!!commentsQueue?.length && <Comments commentsQueue={commentsQueue} />}
       </div>
     </RootLayout>
   )
