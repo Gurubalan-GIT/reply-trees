@@ -1,10 +1,15 @@
+import { user } from '@constants'
 import { Comment } from '@services/Comment/Comment'
 import { Comments } from '@services/Comments/Comments'
+import { v4 as uuidV4 } from 'uuid'
 import { CommentType } from './types'
 
 const buildCommentTrees = (root: Comment, comments: CommentType[]) => {
   for (const comment of comments) {
-    const commentTree = new Comment(comment)
+    const commentTree = new Comment({
+      ...comment,
+      parentCommentKey: root.key,
+    })
     root.children.enqueue(commentTree)
     if (!!comment?.children?.length)
       // Recursively traverse through the queue and enqueue comment trees
@@ -23,4 +28,12 @@ export const convertDataToTrees = (comments: CommentType[]) => {
       buildCommentTrees(commentTree, comment.children)
   }
   return rootCommentsQueue
+}
+
+export const buildNewComment = (commentBody: string) => {
+  return new Comment({
+    key: uuidV4(),
+    body: commentBody,
+    user,
+  })
 }

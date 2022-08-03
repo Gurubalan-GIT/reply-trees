@@ -1,6 +1,6 @@
 import { v4 as uuidV4 } from 'uuid'
 
-const user = {
+export const user = {
   id: uuidV4(),
   name: uuidV4(),
   image:

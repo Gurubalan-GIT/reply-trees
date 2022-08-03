@@ -8,6 +8,7 @@ export type CommentType = {
   key: string
   body: string
   user: UserType
+  parentCommentKey?: string | number
   children?: CommentType[]
 }
 

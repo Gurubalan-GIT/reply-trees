@@ -22,3 +22,29 @@
     text-decoration: underline;
   }
 }
+
+.addCommentWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: black;
+  input {
+    width: 80%;
+    outline: none;
+    height: 40px;
+    padding: 10px;
+    border: $bg-gray;
+    background-color: $bg-gray;
+    border-radius: 4px;
+  }
+  button {
+    border-radius: 8px;
+    background-color: $bg-gray;
+    padding: 10px;
+    border-color: $bg-gray;
+    cursor: pointer;
+  }
+}
