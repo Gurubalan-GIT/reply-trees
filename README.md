@@ -23,6 +23,9 @@ During rendering, we convert our comments to an array and recursively render the
 
 ### Operations on CRUD
 
+- If we were to use arrays, this is going to be incredibly expensive for deep nested comment operations.
+- If we were to recursively solve this, this would result in an expensive computation as well.
+
 This is where we use data structures to solve time complexity issues.
 Each comment has a reference to it's root comment tree and it's subsequent parent comment tree's `key`.
 
