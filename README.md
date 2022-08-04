@@ -30,3 +30,7 @@ This is where we use data structures to solve time complexity issues.
 Each comment has a reference to it's root comment tree and it's subsequent parent comment tree's `key`.
 
 This essentially helps us to find out the instances of both and perform CRUD operations incredibly easily at the same time being performant.
+
+## State management 
+
+This is tied together by [Rematch](https://rematchjs.org/), you can see the state operations [here](/utils/rematch).
