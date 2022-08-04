@@ -14,6 +14,7 @@ As you can see, we are trying to execute operations on deep nested comments and 
 - Comment `extends` an NAry Tree
 
 - **Core** :
+  - Linked List
   - Queue `extends` Linked List
   - NAryTree has a *key* and *children*, where children is a `Queue`
 
