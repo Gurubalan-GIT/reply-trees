@@ -15,6 +15,7 @@ const Comments: FunctionComponent<CommentsProps> = ({ commentsQueue }) => {
       activeKey: '',
       isExpanded: false,
     })
+
   return (
     <div>
       {comments?.map((comment) => (

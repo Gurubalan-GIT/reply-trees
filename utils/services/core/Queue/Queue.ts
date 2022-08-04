@@ -22,7 +22,7 @@ export default class Queue extends LinkedList implements QueueInterface {
   }
 
   enqueue(value: any) {
-    this.append(value)
+    this.prepend(value)
     this.length++
   }
 

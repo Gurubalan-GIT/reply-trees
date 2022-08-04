@@ -27,7 +27,7 @@ export const data = {
       children: [
         {
           key: uuidV4(),
-          body: 'This is a test comment',
+          body: 'This is a sub nested comment',
           user,
           children: [
             { key: uuidV4(), body: 'This is a test comment', user },

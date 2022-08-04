@@ -9,10 +9,11 @@
 }
 
 .commentsContainer {
-  height: 80vh;
+  height: 70vh;
   width: 80vw;
   overflow: auto;
   background-color: $bg-gray;
   border-radius: 10px;
   padding: 20px;
+  position: relative;
 }

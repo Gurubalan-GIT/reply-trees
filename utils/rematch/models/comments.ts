@@ -15,6 +15,16 @@ export const comments = createModel<RootModel>()({
       updatedState.enqueue(payload)
       return updatedState
     },
+    addReply: (state: Comments, payload: Comment) => {
+      const updatedState: Comments = Object.assign(Object.create(state), state)
+      const rootCommentTree = updatedState.find(payload.rootCommentKey)
+      const parentCommentTree = Comment.findTree(
+        rootCommentTree?.value,
+        payload.parentCommentKey
+      )
+      parentCommentTree?.children.enqueue(payload)
+      return updatedState
+    },
   },
   effects: {
     async loadComments(): Promise<any> {
