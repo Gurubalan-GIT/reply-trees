@@ -16,11 +16,11 @@ As you can see, we are trying to execute operations on deep nested comments and 
 - **Core** :
   - Linked List
   - Queue `extends` Linked List
-  - NAryTree has a *key* and *children*, where children is a `Queue`
+  - NAryTree has a *key* and *children*, where children is an instance of `Queue`
 
 ### Rendering
 
-During rendering, we convert our comments to an array and recursively render the components to build the entire layout out.
+During rendering, we convert our comments `queue` to an array and recursively render the components to build the entire layout out.
 
 ### Operations on CRUD
 
