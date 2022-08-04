@@ -1,4 +1,5 @@
 import { Dispatch as RematchDispatch } from '@rematch/store'
+import { Comment as CommentType } from '@services/Comment/Comment'
 import classes from '@styles/comments.module.scss'
 import classNames from 'classnames'
 import AddComment from 'modules/AddComment'
@@ -11,7 +12,7 @@ import {
 } from 'react'
 import { useDispatch } from 'react-redux'
 import { buildNewReply } from 'utils/helpers'
-import { CommentType, ExpandCommentType } from 'utils/types'
+import { ExpandCommentType } from 'utils/types'
 
 type CommentProps = {
   comment: CommentType
@@ -45,6 +46,12 @@ const Comment: FunctionComponent<CommentProps> = ({
     setViewAddReplyBlock(!viewAddReplyBlock)
   }
 
+  const handleDeleteComment = () => {
+    if (!comment.parentCommentKey && !comment.rootCommentKey)
+      dispatch.comments.deleteComment(comment)
+    else dispatch.comments.deleteReply(comment)
+  }
+
   return (
     <Fragment>
       <div className={classes.commentContainer}>
@@ -70,6 +77,9 @@ const Comment: FunctionComponent<CommentProps> = ({
                 : 'Hide Replies'}
             </div>
           )}
+          <div onClick={handleDeleteComment} className={classes.expandButton}>
+            Delete
+          </div>
         </div>
       </div>
       {viewAddReplyBlock && (

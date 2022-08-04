@@ -63,16 +63,16 @@ export default class LinkedList implements LinkedListInterface {
     if (!this.head) return
     let currentNode = this.head
     while (currentNode.next) {
-      if (currentNode.next.value === value) {
+      if (currentNode.next.value.key === value) {
         currentNode.next = currentNode.next.next
       } else {
         currentNode = currentNode.next
       }
     }
-    if (this.head.value === value) {
+    if (this.head.value.key === value) {
       this.head = this.head.next || null
     }
-    if (this.tail?.value === value) {
+    if (this.tail?.value.key === value) {
       this.tail = currentNode
     }
   }

@@ -14,6 +14,6 @@ export type CommentType = {
 }
 
 export type ExpandCommentType = {
-  activeKey: string
+  activeKey: string | number
   isExpanded: boolean
 }

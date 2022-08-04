@@ -45,7 +45,7 @@ export const buildNewComment = (commentBody: string) => {
 
 export const buildNewReply = (
   commentBody: string,
-  parentCommentKey: string,
+  parentCommentKey: string | number,
   rootCommentKey?: string | number
 ) => {
   return new Comment({
